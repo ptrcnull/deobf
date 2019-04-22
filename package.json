@@ -1,0 +1,25 @@
+{
+  "name": "deobf",
+  "version": "1.0.0",
+  "description": "ECMAScript deobfuscator... kinda",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ptrcnull/deobf.git"
+  },
+  "author": "ptrcnull",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ptrcnull/deobf/issues"
+  },
+  "homepage": "https://github.com/ptrcnull/deobf#readme",
+  "dependencies": {
+    "escodegen": "^1.11.1",
+    "esprima": "^4.0.1",
+    "estraverse": "^4.2.0",
+    "fs-extra": "^7.0.1"
+  }
+}
