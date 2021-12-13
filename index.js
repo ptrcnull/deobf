@@ -4,6 +4,7 @@ const fs = require('fs-extra')
 const arrayObfuscation = require('./lib/arrayObfuscation')
 const squareBrackets = require('./lib/squareBrackets')
 const requireNames = require('./lib/requireNames')
+const stringConcat = require('./lib/stringConcat')
 const arrayBool = require('./lib/arrayBool')
 
 async function main () {
@@ -11,6 +12,7 @@ async function main () {
   let parsed = esprima.parseScript(file)
 
   parsed = arrayObfuscation(parsed)
+  parsed = stringConcat(parsed)
   parsed = squareBrackets(parsed)
   parsed = requireNames(parsed)
   parsed = arrayBool(parsed)
