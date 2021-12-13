@@ -1,6 +1,7 @@
 const esprima = require('esprima')
 const escodegen = require('escodegen')
-const fs = require('fs-extra')
+const fs = require('fs').promises
+
 const arrayObfuscation = require('./lib/arrayObfuscation')
 const squareBrackets = require('./lib/squareBrackets')
 const requireNames = require('./lib/requireNames')
