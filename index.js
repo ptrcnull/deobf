@@ -12,6 +12,7 @@ const nestedBlocks = require('./lib/nestedBlocks')
 const commaSeparatedStatements = require('./lib/commaSeparatedStatements')
 const _void = require('./lib/void')
 const comparisonOrder = require('./lib/comparisonOrder')
+const splitVarDeclarations = require('./lib/splitVarDeclarations')
 
 async function main () {
   const file = await fs.readFile(process.argv[2], 'utf8')
@@ -28,6 +29,7 @@ async function main () {
   parsed = commaSeparatedStatements(parsed)
   parsed = _void(parsed)
   parsed = comparisonOrder(parsed)
+  parsed = splitVarDeclarations(parsed)
 
   // console.log(util.inspect(parsed, false, 16, true))
 
