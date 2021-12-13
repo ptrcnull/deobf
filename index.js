@@ -7,6 +7,7 @@ const requireNames = require('./lib/requireNames')
 const stringConcat = require('./lib/stringConcat')
 const staticIf = require('./lib/staticIf')
 const arrayBool = require('./lib/arrayBool')
+const nestedBlocks = require('./lib/nestedBlocks')
 
 async function main () {
   const file = await fs.readFile(process.argv[2], 'utf8')
@@ -18,6 +19,7 @@ async function main () {
   parsed = requireNames(parsed)
   parsed = staticIf(parsed)
   parsed = arrayBool(parsed)
+  parsed = nestedBlocks(parsed)
 
   if (process.argv[3]) console.log(eval(process.argv[3])) // eslint-disable-line no-eval
 
