@@ -11,6 +11,7 @@ const arrayBool = require('./lib/arrayBool')
 const nestedBlocks = require('./lib/nestedBlocks')
 const commaSeparatedStatements = require('./lib/commaSeparatedStatements')
 const _void = require('./lib/void')
+const comparisonOrder = require('./lib/comparisonOrder')
 
 async function main () {
   const file = await fs.readFile(process.argv[2], 'utf8')
@@ -26,6 +27,7 @@ async function main () {
   parsed = nestedBlocks(parsed)
   parsed = commaSeparatedStatements(parsed)
   parsed = _void(parsed)
+  parsed = comparisonOrder(parsed)
 
   if (process.argv[3]) console.log(eval(process.argv[3])) // eslint-disable-line no-eval
 
