@@ -17,6 +17,7 @@ const functionToClass = require('./lib/functionToClass')
 const expandIfShortcut = require('./lib/expandIfShortcut')
 const unwrapTernary = require('./lib/unwrapTernary')
 const addIfBraces = require('./lib/addIfBraces')
+const expandSequenceExpression = require('./lib/expandSequenceExpression')
 
 async function main () {
   const file = await fs.readFile(process.argv[2], 'utf8')
@@ -39,6 +40,7 @@ async function main () {
     parsed = expandIfShortcut(parsed)
     parsed = unwrapTernary(parsed)
     parsed = addIfBraces(parsed)
+    parsed = expandSequenceExpression(parsed)
   }
 
   // console.log(util.inspect(parsed, false, 16, true))
