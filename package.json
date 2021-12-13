@@ -20,9 +20,9 @@
   },
   "homepage": "https://github.com/ptrcnull/deobf#readme",
   "dependencies": {
-    "escodegen": "^1.11.1",
+    "escodegen": "^2.0.0",
     "esprima": "^4.0.1",
-    "estraverse": "^4.2.0",
-    "fs-extra": "^7.0.1"
+    "estraverse": "^5.2.0",
+    "fs-extra": "^9.1.0"
   }
 }
