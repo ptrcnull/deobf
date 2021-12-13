@@ -1,19 +1,19 @@
 const esprima = require('esprima')
 const escodegen = require('escodegen')
 const fs = require('fs-extra')
-const cleanArrayObfuscation = require('./lib/cleanArrayObfuscation')
-const cleanSquareBrackets = require('./lib/cleanSquareBrackets')
-const cleanRequireNames = require('./lib/cleanRequireNames')
+const arrayObfuscation = require('./lib/arrayObfuscation')
+const squareBrackets = require('./lib/squareBrackets')
+const requireNames = require('./lib/requireNames')
 
 async function main () {
   const file = await fs.readFile(process.argv[2], 'utf8')
   let parsed = esprima.parseScript(file)
 
-  parsed = cleanArrayObfuscation(parsed)
-  parsed = cleanSquareBrackets(parsed)
-  parsed = cleanRequireNames(parsed)
+  parsed = arrayObfuscation(parsed)
+  parsed = squareBrackets(parsed)
+  parsed = requireNames(parsed)
 
-  console.log(eval(process.argv[3])) // eslint-disable-line no-eval
+  if (process.argv[3]) console.log(eval(process.argv[3])) // eslint-disable-line no-eval
 
   const serialized = escodegen.generate(parsed, {
     format: {
