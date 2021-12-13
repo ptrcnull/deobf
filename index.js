@@ -5,6 +5,7 @@ const arrayObfuscation = require('./lib/arrayObfuscation')
 const squareBrackets = require('./lib/squareBrackets')
 const requireNames = require('./lib/requireNames')
 const stringConcat = require('./lib/stringConcat')
+const staticIf = require('./lib/staticIf')
 const arrayBool = require('./lib/arrayBool')
 
 async function main () {
@@ -15,6 +16,7 @@ async function main () {
   parsed = stringConcat(parsed)
   parsed = squareBrackets(parsed)
   parsed = requireNames(parsed)
+  parsed = staticIf(parsed)
   parsed = arrayBool(parsed)
 
   if (process.argv[3]) console.log(eval(process.argv[3])) // eslint-disable-line no-eval
