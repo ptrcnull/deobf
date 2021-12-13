@@ -29,7 +29,7 @@ async function main () {
   parsed = _void(parsed)
   parsed = comparisonOrder(parsed)
 
-  if (process.argv[3]) console.log(eval(process.argv[3])) // eslint-disable-line no-eval
+  // console.log(util.inspect(parsed, false, 16, true))
 
   const serialized = escodegen.generate(parsed, {
     format: {
